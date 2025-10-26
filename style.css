@@ -22,37 +22,21 @@
     font-style: normal;
 }
 
-.top__button--call,
-.top__button--chat,
-.top__button--profile,
+.button-round--call,
+.button-round--chat,
+.button-round--profile,
 .divider-first,
-.main__button,
-.text-second,
-.text-second-part {
+.main__button {
   display: none;
 }
 
-* {
- margin: 0;
- padding: 0;
- box-sizing: border-box;
-}
-
-
-
 /* Шапка */
-
-.body {
- max-width: 1120px;
- width: 100%;
- overflow: hidden;
- margin: 0 auto;
-}
 
 .header {
     height: 88px;
     padding: 19px 0;
     border-bottom: 1px solid #D9FFF5;
+    background-color: #ffffff;
 }
 .header__navigation {
     display: flex;
@@ -64,16 +48,63 @@
     margin: 0 auto;
 }
 
-.top__button {
- cursor: pointer;
- border: none;
- background: transparent;
+.header__navigation-logo {
+  flex-shrink: 0;
 }
 
-.divider-first,
-.divider-second {
- align-self: center;
+.button-round {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ff3e79;
+  background-repeat: no-repeat;
+  background-position: center;
+  align-self: center;
+  background-size: 50%;
+  flex-shrink: 0;
 }
+
+.button-round--burger {
+  background-image: url(files/img/burger.svg);
+  background-size: 18px 16px;
+
+}
+
+.button-round--call {
+  background-image: url(files/img/call.svg);
+   background-size: 18px 18px;
+   
+}
+
+.button-round--chat {
+  background-image: url(files/img/chat.svg);
+   background-size: 20px 20px;
+}
+
+.button-round--profile {
+  background-image: url(files/img/profile.svg);
+   background-size: 20px 18px;
+}
+
+.button-round--repair {
+  background-image: url(files/img/repair.svg);
+   background-size: 20px 20px;
+}
+
+.button-round--checkstatus {
+  background-image: url(files/img/checkstatus.svg);
+   background-size: 16px 20px;
+}
+
+.divider {
+  width: 2px;
+  height: 32px;
+  background: url(files/img/divider.svg) no-repeat;
+  align-self: center;
+  flex-shrink: 0;
+}
+
+
 
 .header__navigation-logo {
  margin-right: auto;
@@ -82,10 +113,8 @@
 /* Тело */
 
 body {
-  font-family: "TT Lakes", sans-serif;
   background: #F8F8F8;
   color: #1B1C21;
-  font-size: 16px;
 }
 
 .main {
@@ -100,7 +129,7 @@ body {
  padding-right: 16px;
 }
 
-.main__div {
+.main__header-wrap {
  display: flex;
  color: #1B1C21;
  padding-bottom: 24px;
@@ -111,27 +140,30 @@ body {
  font-weight: 700;
  line-height: 40px;
  letter-spacing: -0.6px;
- padding-left: 16px;
+ margin-left: 16px;
+}
+
+.main__header::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 40px;
+  background: url(files/img/highlight.svg) no-repeat center;
+  margin-right: 12px;
+  vertical-align: middle;
+  left: 0;
+  position: fixed;
 }
 
 /* Список навигации */
 
-.div__menu {
- max-width: 1120px;
-}
-
-.nav__menu {
- margin-bottom: 24px;
-}
-
-.menu-list {
+ul {
  display: flex;
- list-style: none;
  padding-right: 16px;
  overflow-x: auto;
 }
 
-.menu-list::before {
+ul::before {
  content: "";
  position: absolute;
  width: 16px;
@@ -144,7 +176,7 @@ body {
  z-index: 0;
 }
 
-.menu-list::after {
+ul::after {
  content: "";
  position:absolute;
  width: 16px;
@@ -156,7 +188,7 @@ body {
  z-index: 0;
 }
 
-.menu-button {
+li {
  font-family: inherit;
  font-size: 16px;
  letter-spacing: -0.2px;
@@ -168,29 +200,12 @@ body {
  padding: 8px 0.6em;
 }
 
-.menu-button--act {
+li:hover {
  background-color: white;
  border: 2px solid #B8FFEC;
  border-radius: 6px;
  padding: 6px calc(0.6em - 2px);
  margin-left: 16px;
-}
-
-.menu-button:active{
- background-color: white;
- border: 2px solid #B8FFEC;
- border-radius: 6px;
- padding: 6px calc(0.6em - 2px);
-}
-
-a {
-text-decoration: none;
-color: inherit;
-}
-
-.menu-list::-webkit-scrollbar {
- display: none;
- -ms-overflow-style: none;
 }
 
 /* Основной текст */
@@ -204,16 +219,14 @@ color: inherit;
 
 .info__text {
   max-width: 312px;
-  max-height: 160px;
-  line-height: 20px;
+  max-height: 90px;
+  overflow: hidden;
+  text-overflow: clip;
+  line-height: 18px;
   padding: 0 0 0 16px;
-}
-
-.text-first,
-.text-second,
-.text-second-part {
- font-size: 14px;
- letter-spacing: 0.2px;
+  margin-top: 24px;
+  font-size: 14px;
+  letter-spacing: 0.2px;
 }
 
 .info__button {
@@ -228,29 +241,22 @@ color: inherit;
  cursor: pointer;
 }
 
-.info_button-more {
-  display: flex;
-  width:24px;
+.info-more {
+  width: 24px;
   height: 24px;
-  margin-right: 0;
-}
-
-.info__img img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-  
+  background-image: url(files/img/expand.svg);
+  background-size: 24px 24px;
+  margin-right: 9px;
 }
 
 /* Экран 768px */
 
 @media (min-width: 768px) {
 
- .top__button--call, 
- .top__button--chat, 
- .top__button--profile,
- .divider-first,
- .text-second {
+ .button-round--call, 
+ .button-round--chat, 
+ .button-round--profile,
+ .divider-first{
    display:inline;
  }
 
@@ -262,12 +268,8 @@ color: inherit;
   padding: 24px 0 40px 8px;
 }
 
- .main__div {
+ .main__header-wrap {
    padding-bottom: 24px;
-}
-
- .main__higlight {
-   margin-left: -7px;
 }
 
  p {
@@ -286,7 +288,7 @@ color: inherit;
 
 .info__text {
   max-width: 312px;
-  max-height: 160px;
+  max-height: 145px;
   line-height: 20px;
   padding: 0;
   grid-column: 1;
@@ -308,9 +310,6 @@ color: inherit;
  .header {
    display: none;}
 
- .info__text,
- .text-second,
- .text-second-part,
  .main__button {
    display: inline;
   }
@@ -325,40 +324,27 @@ color: inherit;
   padding: 0;
 }
 
-.main__higlight {
- margin-right: 0;
- 
-}
-
 .main__header {
   padding: 0;
   margin-left: 33px;
   align-items: center;
 }
 
-.main__div {
+.main__header-wrap {
   display: flex;
   justify-content: space-between;
   padding-bottom: 0;
-}
+} 
 
-.menu-list { 
+ul { 
  padding-top: 10px;
  overflow: hidden;
  flex-wrap: wrap;
 }
 
-.menu-button {
+li {
  margin-left: 0;
  padding: 8.63px 13px 8px 24px;
-}
-
-.menu-button--act {
- padding-bottom: 8.63px 13px 8px 24px;
-}
-
-.top__button {
- gap: 32px;
 }
 
 .main__buttons {
@@ -370,7 +356,7 @@ color: inherit;
 }
 
 .main__button {
- font-family: "TT Lakes", sans-serif;
+ font-family: "TT Lakes";
  display: flex;
  align-items: center;
  gap: 8px;
@@ -378,6 +364,22 @@ color: inherit;
  letter-spacing: -0.2px;
  line-height: 1.5em;
  font-size: 16px;
+}
+
+.main-repair {
+  width: 40px;
+  height: 40px;
+  background:#ff3e79 url(files/img/repair.svg) no-repeat center;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.main-checkstatus {
+  width: 40px;
+  height: 40px;
+  background:#ff3e79 url(files/img/checkstatus.svg) no-repeat center;
+  border-radius: 50%;
+  flex-shrink: 0;
 }
 
 .info {
@@ -396,6 +398,7 @@ color: inherit;
  line-height: 20px;
  max-width: 490px;
  max-height: 160px;
+ overflow: hidden;
  grid-column: 1;
  grid-row: 1;
   }
@@ -410,3 +413,4 @@ color: inherit;
   grid-row: span 2;
 }
 }
+
