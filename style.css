@@ -25,7 +25,7 @@
 .button-round--call,
 .button-round--chat,
 .button-round--profile,
-.divider-first,
+.divider--first,
 .main__button {
   display: none;
 }
@@ -229,7 +229,7 @@ li:hover {
   letter-spacing: 0.2px;
 }
 
-.info__button {
+.button-readmore {
  font-family: 'TT Lakes Medium';
  display: flex;
  margin: 10px 32px 11px 1px;
@@ -241,7 +241,7 @@ li:hover {
  cursor: pointer;
 }
 
-.info-more {
+.button-readmore__icon {
   width: 24px;
   height: 24px;
   background-image: url(files/img/expand.svg);
@@ -256,7 +256,7 @@ li:hover {
  .button-round--call, 
  .button-round--chat, 
  .button-round--profile,
- .divider-first{
+ .divider--first {
    display:inline;
  }
 
@@ -295,7 +295,7 @@ li:hover {
   grid-row: 1;
 }
 
-.info__button {
+.button-readmore {
  grid-column: 1;
  grid-row: 2;
 }
@@ -403,7 +403,7 @@ li {
  grid-row: 1;
   }
 
-.info__button {
+.button-readmore {
   grid-column: 1;
   grid-row: 2;
 }
@@ -413,4 +413,3 @@ li {
   grid-row: span 2;
 }
 }
-
